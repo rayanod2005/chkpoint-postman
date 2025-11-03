@@ -12,7 +12,9 @@ var app = express();
 
 app.use(cors(
     {
-        origin: ['http://localhost:5174/'],
+        origin: ['http://localhost:5174'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        optionsSuccessStatus: 200,
         credentials: true,
     }
 ))
