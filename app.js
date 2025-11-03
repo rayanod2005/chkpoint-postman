@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const serverRoutes = require('./routes/server');
 const express = require('express');
 const cors = require('cors');
-
+const path = require('path');   
 
 connectDB();
 var app = express();
@@ -27,6 +27,15 @@ app.use('/', function (req, res, next) {
 }, serverRoutes);
 app.listen(process.env.PORT || 3000, () => {
     console.log('Server is running on port 3000');
+});
+
+app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static('dist',{
+    maxAge: '0',
+    etag: false
+}) );
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 
