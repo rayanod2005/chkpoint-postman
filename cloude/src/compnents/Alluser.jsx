@@ -6,7 +6,7 @@ export default function Alluser() {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await fetch('https://chkpoint-postman.onrender.com//alluser');
+                const response = await fetch('https://chkpoint-postman.onrender.com/alluser');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
