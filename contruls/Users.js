@@ -22,6 +22,7 @@ async function liste(req, res) {
 async function listAllUsers(req, res) {
     try {
         const users = await User.find();
+        console.log(users);
         res.status(200).json(users);
     } catch (error) {
         console.error('Error fetching users:', error);
