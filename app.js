@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const serverRoutes = require('./routes/server');
 const express = require('express');
-const cors = require('cors')();
+const cors = require('cors');
 
 
 connectDB();
@@ -12,7 +12,7 @@ var app = express();
 
 app.use(cors(
     {
-        origin: 'http://localhost:5174/',
+        origin: ['http://localhost:5174/'],
         credentials: true,
     }
 ))
