@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = process.env.MYATLS || 'mongodb://127.0.0.1:27017/test';
+const uri = process.env.MYATLS;
 
 module.exports = async function connectDB() {
     try {
